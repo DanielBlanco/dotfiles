@@ -1,43 +1,85 @@
 call plug#begin('~/.nvim/plugged')
 
-" colorschemes
+"------------------------------------------------------------------------------
+" Color Schemes:
+" -----------------------------------------------------------------------------
 Plug 'chriskempson/base16-vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'junegunn/seoul256.vim'
 
+"------------------------------------------------------------------------------
+" Utilities:
+"------------------------------------------------------------------------------
 
-" utilities
+" Fuzzy file, buffer, mru, tag, etc finder.
 Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons'
+" A tree explorer plugin for vim.
+"Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons'
+" Vim plugin for the Perl module / CLI script 'ack<F37>
 Plug 'mileszs/ack.vim'
-Plug 'Raimondi/delimitMate'
+" Provides insert mode auto-completion for quotes, parens, brackets, etc.
+"Plug 'Raimondi/delimitMate'
+" comment stuff out
 Plug 'tpope/vim-commentary'
+" pairs of handy bracket mappings
 Plug 'tpope/vim-unimpaired'
+" wisely add end in ruby, endfunction/endif/more in vim script, etc
 Plug 'tpope/vim-endwise'
+" Ghetto HTML/XML mappings
 Plug 'tpope/vim-ragtag'
-Plug 'tpope/vim-surround'
-Plug 'benmills/vimux'
+" quoting/parenthesizing made simple
+"Plug 'tpope/vim-surround'
+" Easily interact with tmux from vim.
+"Plug 'benmills/vimux'
+" lean & mean status/tabline for vim that's light as air
 Plug 'bling/vim-airline'
-" Plug 'scrooloose/syntastic'
+" Syntax checking hacks for vim
+Plug 'scrooloose/syntastic'
+" Asynchronous :make using Neovim's job-control functionality.
 Plug 'benekastah/neomake'
+" Git wrapper
 Plug 'tpope/vim-fugitive'
+" enable repeating supported plugin maps with .
 Plug 'tpope/vim-repeat'
-Plug 'garbas/vim-snipmate'
+" Aims to provide support for textual snippets, similar to TextMate
+"Plug 'garbas/vim-snipmate'
+" EditorConfig plugin for Vim
 Plug 'editorconfig/editorconfig-vim'
+" Interpret a file by function and cache file automatically
 Plug 'MarcWeber/vim-addon-mw-utils'
+" Some utility functions for VIM
 Plug 'tomtom/tlib_vim'
-Plug 'sotte/presenting.vim'
+" A simple tool for presenting slides in vim based on text files.
+" Plug 'sotte/presenting.vim'
+" Perform all your vim insert mode completions with Tab
 Plug 'ervandew/supertab'
+" Asynchronous build and test dispatcher
 Plug 'tpope/vim-dispatch'
+" Unobtrusive scratch window
 " Plug 'mtth/scratch.vim'
+" enhances netrw
 Plug 'tpope/vim-vinegar'
-" Plug 'tpope/vim-abolish'
+" easily search for, substitute, and abbreviate multiple variants of a word
+Plug 'tpope/vim-abolish'
+" Simplifies the transition between multiline and single-line code
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'vim-scripts/matchit.zip'
-Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
-Plug 'sickill/vim-pasta' " context-aware pasting
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free writing
-Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for presentating with vim
+" extended % matching for HTML, LaTeX, and many other languages
+"Plug 'vim-scripts/matchit.zip'
+" detect indent style (tabs vs. spaces)
+Plug 'tpope/vim-sleuth'
+" context-aware pasting
+Plug 'sickill/vim-pasta'
+" distraction-free writing
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+" focus tool. Good for presentating with vim
+"Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
+" Unite is for quickly navigating between files in a project.
+Plug 'Shougo/unite.vim'
 
-" language-specific plugins
+"------------------------------------------------------------------------------
+" Language Specific Plugins:
+"------------------------------------------------------------------------------
+
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'gregsexton/MatchTag', { 'for': 'html' }
 Plug 'othree/html5.vim', { 'for': 'html' }
@@ -50,8 +92,8 @@ Plug 'Quramy/tsuquyomi', { 'for': 'typescript', 'do': 'npm install' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Plug 'juvenn/mustache.vim', { 'for': 'mustache' }
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+" Plug 'mustache/vim-mustache-handlebars'
+" Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -63,12 +105,13 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'timcharper/textile.vim', { 'for': 'textile' }
 " Plug 'tclem/vim-arduino'
 " Plug 'davidoc/taskpaper.vim'
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
 call plug#end()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"------------------------------------------------------------------------------
+" General:
+"------------------------------------------------------------------------------
 
 " load plugins from vundle
 " source ~/.vim/plugins.vim
@@ -93,13 +136,14 @@ set history=1000 " change history to 1000
 set textwidth=120
 
 " Tab control
-set noexpandtab " insert tabs rather than spaces for <Tab>
-set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=4 " the visible width of tabs
-set softtabstop=4 " edit as if the tabs are 4 characters wide
-set shiftwidth=4 " number of spaces to use for indent and unindent
+"set noexpandtab " insert tabs rather than spaces for <Tab>
+" set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+set tabstop=2 " the visible width of tabs
+set softtabstop=2 " edit as if the tabs are 4 characters wide
+set shiftwidth=2 " number of spaces to use for indent and unindent
 set shiftround " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
+set expandtab " insert spaces rather than tabs for <Tab>
 
 if has('mouse')
     set mouse=a
@@ -160,9 +204,9 @@ set foldnestmax=10 " deepest fold is 10 levels
 set nofoldenable " don't fold by default
 set foldlevel=1
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => User Interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"------------------------------------------------------------------------------
+" User Interface:
+"------------------------------------------------------------------------------
 
 set so=7 " set 7 lines to the cursors - when moving vertical
 set wildmenu " enhanced command line completion
@@ -188,6 +232,10 @@ set magic " Set magic on, for regex
 set showmatch " show matching braces
 set mat=2 " how many tenths of a second to blink
 
+" Will help me align my code to 80 chars.
+set colorcolumn=80
+highlight ColorColumn guibg=Gray
+
 " error bells
 set noerrorbells
 set visualbell
@@ -199,9 +247,14 @@ syntax on
 
 set encoding=utf8
 let base16colorspace=256  " Access colors present in 256 colorspace"
-set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
+" Explicitly tell vim that the terminal supports 256 colors"
+set t_Co=256
+
+" Background and theme colors
 execute "set background=".$BACKGROUND
-execute "colorscheme ".$THEME
+
+let g:seoul256_background=235
+execute "colorscheme seoul256"
 
 " set number " show line numbers
 " set relativenumber " show relative line numbers
@@ -215,9 +268,9 @@ set showbreak=… " show ellipsis at breaking
 set autoindent " automatically set indent of new line
 set smartindent
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups, and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"------------------------------------------------------------------------------
+" Files, Backups and Undo:
+"------------------------------------------------------------------------------
 
 "set nobackup
 "set nowritebackup
@@ -226,15 +279,15 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => StatusLine
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"------------------------------------------------------------------------------
+" StatusLine:
+"------------------------------------------------------------------------------
 
 set laststatus=2 " show the satus line all the time
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"------------------------------------------------------------------------------
+" Mappings:
+"------------------------------------------------------------------------------
 " General mappings/shortcuts for functionality
 " Additional, plugin-specific mappings are located under
 " the plugins section
@@ -267,13 +320,13 @@ set pastetoggle=<F6>
 map <leader>v :set paste!<cr>
 
 " edit ~/.vimrc
-map <leader>ev :e! ~/.vimrc<cr>
+"map <leader>ev :e! ~/.vimrc<cr>
 " edit vim plugins
-map <leader>evp :e! ~/.vim/plugins.vim<cr>
+"map <leader>evp :e! ~/.vim/plugins.vim<cr>
 " edit vim functions
-map <leader>evf :e! ~/.vim/functions.vim<cr>
+"map <leader>evf :e! ~/.vim/functions.vim<cr>
 " edit gitconfig
-map <leader>eg :e! ~/.gitconfig<cr>
+"map <leader>eg :e! ~/.gitconfig<cr>
 
 " clear highlighted search
 noremap <space> :set hlsearch! hlsearch?<cr>
@@ -335,9 +388,9 @@ nmap \s :set ts=4 sts=4 sw=4 et<cr>
 
 nmap <leader>w :setf textile<cr> :Goyo<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"------------------------------------------------------------------------------
+" Functions:
+"------------------------------------------------------------------------------
 
 " Window movement shortcuts
 " move to the window in the direction shown, or create a new window
@@ -436,19 +489,19 @@ function! HiInterestingWord(n)
     normal! `z
 endfunction
 
-nnoremap <silent> <leader>1 :call HiInterestingWord(1)<cr>
-nnoremap <silent> <leader>2 :call HiInterestingWord(2)<cr>
-nnoremap <silent> <leader>3 :call HiInterestingWord(3)<cr>
-nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
-nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
-nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
+"nnoremap <silent> <leader>1 :call HiInterestingWord(1)<cr>
+"nnoremap <silent> <leader>2 :call HiInterestingWord(2)<cr>
+"nnoremap <silent> <leader>3 :call HiInterestingWord(3)<cr>
+"nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
+"nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
+"nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
 
-hi def InterestingWord1 guifg=#000000 ctermfg=16 guibg=#ffa724 ctermbg=214
-hi def InterestingWord2 guifg=#000000 ctermfg=16 guibg=#aeee00 ctermbg=154
-hi def InterestingWord3 guifg=#000000 ctermfg=16 guibg=#8cffba ctermbg=121
-hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#b88853 ctermbg=137
-hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
-hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
+"hi def InterestingWord1 guifg=#000000 ctermfg=16 guibg=#ffa724 ctermbg=214
+"hi def InterestingWord2 guifg=#000000 ctermfg=16 guibg=#aeee00 ctermbg=154
+"hi def InterestingWord3 guifg=#000000 ctermfg=16 guibg=#8cffba ctermbg=121
+"hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#b88853 ctermbg=137
+"hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
+"hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
 
 function! HtmlUnEscape()
   silent s/&lt;/</eg
@@ -459,20 +512,20 @@ endfunction
 nnoremap <silent> <leader>u :call HtmlUnEscape()<cr>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"------------------------------------------------------------------------------
+" Plugins:
+"------------------------------------------------------------------------------
 
 " close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=0
+"let g:NERDTreeQuitOnOpen=0
 " show hidden files in NERDTree
-let NERDTreeShowHidden=1
+"let NERDTreeShowHidden=1
 " remove some files by extension
-let NERDTreeIgnore = ['\.js.map$']
+"let NERDTreeIgnore = ['\.js.map$']
 " Toggle NERDTree
-nmap <silent> <leader>k :NERDTreeToggle<cr>
+"nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
-nmap <silent> <leader>y :NERDTreeFind<cr>
+"nmap <silent> <leader>y :NERDTreeFind<cr>
 
 " map fuzzyfinder (CtrlP) plugin
 " nmap <silent> <leader>t :CtrlP<cr>
@@ -482,17 +535,18 @@ let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
 
 " Fugitive Shortcuts
-nmap <silent> <leader>gs :Gstatus<cr>
-nmap <leader>ge :Gedit<cr>
-nmap <silent><leader>gr :Gread<cr>
-nmap <silent><leader>gb :Gblame<cr>
+" nmap <silent> <leader>gs :Gstatus<cr>
+" nmap <leader>ge :Gedit<cr>
+" nmap <silent><leader>gr :Gread<cr>
+" nmap <silent><leader>gb :Gblame<cr>
 
-nmap <leader>m :MarkedOpen!<cr>
-nmap <leader>mq :MarkedQuit<cr>
+" nmap <leader>m :MarkedOpen!<cr>
+" nmap <leader>mq :MarkedQuit<cr>
 
-" toggle Limelight
-nmap <leader>f :Limelight!!<cr>
+" Toggle Limelight:
+"nmap <leader>f :Limelight!!<cr>
 
+" Neomake Configuration:
 let g:neomake_javascript_jshint_maker = {
     \ 'args': ['--verbose'],
     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
@@ -506,31 +560,32 @@ let g:neomake_javascript_enabled_markers = ['jshint', 'jscs']
 "             \ }
 " only show files that are not ignored by git
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
 " search the nearest ancestor that contains .git, .hg, .svn
 let g:ctrlp_working_path_mode = 2
 
-
 " airline options
 let g:airline_powerline_fonts=1
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+" let g:airline_left_sep=''
+" let g:airline_right_sep=''
 let g:airline_theme='base16'
-
 " don't hide quotes in json files
 let g:vim_json_syntax_conceal = 0
-
-
 let g:SuperTabCrMapping = 0
 
-if (has("gui_running"))
-    set guioptions=egmrt
-    set background=light
-    colorscheme solarized
-    let g:airline_left_sep=''
-    let g:airline_right_sep=''
-    let g:airline_powerline_fonts=0
-    let g:airline_theme='solarized'
-endif
+
+"------------------------------------------------------------------------------
+" DBExt Profiles:
+"------------------------------------------------------------------------------
+
+" MySQL - Gradesfirst
+"let g:dbext_default_profile_mysql_gradesfirst="type=MYSQL:user=root:passwd=:dbname=gradesfirst:host=192.168.33.10"
+"let g:dbext_default_profile_mysql_gradesfirst_test="type=MYSQL:user=root:passwd=:dbname=gradesfirst_test:host=192.168.33.10"
+
+" MySQL - Querium
+"let g:dbext_default_profile_mysql_mathbooster="type=MYSQL:user=querium:passwd=:dbname=tsiprep_development"
+
+" Default profile
+"let g:dbext_default_profile="mysql_gradesfirst"
+
 
 call ApplyLocalSettings(expand('.'))

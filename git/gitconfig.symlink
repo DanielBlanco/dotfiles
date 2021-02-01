@@ -1,9 +1,9 @@
 # gitconfig
 [user]
-    name = Nick Nisi
-    email = nick@nisi.org
+	name = Daniel Blanco
+	email = daniel.blancorojas@gmail.com
 [github]
-    user = nicknisi
+    user = DanielBlanco
 [init]
     templatedir = ~/.dotfiles/git/templates
 [alias]
@@ -83,12 +83,13 @@
     # check out a local copy of a PR. https://gist.github.com/gnarf/5406589
     pr  = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
     pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+	acp = "!f(){ git add --all && git commit -aqm \"$1\" && git pull -q --no-progress && git push -q; }; f"
 [color]
     diff = auto
     status = auto
     branch = auto
     interactive = auto
-    ui = auto
+	ui = true
 [color "branch"]
     current = green bold
     local = green
@@ -136,3 +137,26 @@
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[gitflow "feature.start"]
+	fetch = yes
+[gitflow "feature.finish"]
+	keepremote = no
+	squash = yes
+	squash-info = yes
+	fetch = yes
+	push = yes
+[gitflow "hotfix.start"]
+	fetch = yes
+[gitflow "hotfix.finish"]
+	fetch = yes
+	push = yes
+[gitflow "release.start"]
+	fetch = yes
+[gitflow "release.finish"]
+	fetch = yes
+	push = yes

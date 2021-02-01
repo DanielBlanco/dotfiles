@@ -134,3 +134,8 @@ function light() {
 function dark() {
     export BACKGROUND="dark" && reload!
 }
+
+# skill-profile shorthand.
+function sp() {
+    scripts/$1.sh
+}

@@ -34,6 +34,9 @@ set-window-option -g window-status-current-fg $tm_color_active
 set-window-option -g window-status-current-bg default
 set-window-option -g  window-status-current-format "#[bold]#I #W"
 
+set-window-option -g window-status-current-bg '#1E272C'
+set-window-option -g window-status-current-fg cyan
+
 # pane border
 set-option -g pane-border-fg $tm_color_inactive
 set-option -g pane-active-border-fg $tm_active_border_color
@@ -49,6 +52,7 @@ set-option -g display-panes-colour $tm_color_inactive
 # clock
 set-window-option -g clock-mode-colour $tm_color_active
 
+# Status meta data
 tm_spotify="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/spotify.scpt)"
 tm_itunes="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/itunes.scpt)"
 tm_rdio="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/rdio.scpt)"
@@ -59,4 +63,4 @@ tm_host="#[fg=$tm_color_feature,bold]#h"
 tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
 
 set -g status-left $tm_session_name' '
-set -g status-right $tm_itunes' '$tm_date' '$tm_host
+set -g status-right $tm_spotify' '$tm_date' '$tm_host
