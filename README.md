@@ -8,8 +8,9 @@ Clone to `$HOME/.dotfiles` directory like this:
 > git clone git@github.com:DanielBlanco/dotfiles.git .dotfiles
 ```
 
-## TMUX
-Just link to the tmux conf file:
+## Install
+Run the install script:
 ```
-> ln -s .dotfiles/tmux/tmux.conf.symlink .tmux.conf
+> cd $HOME
+> .dotfiles/install.sh
 ```
