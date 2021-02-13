@@ -1,6 +1,9 @@
 # Dotfiles
 @dblancorojas dotfiles.
 
+Keep in mind that my current work environment is Arch linux so I might have 
+files with settings specific to Arch.
+
 Clone to `$HOME/.dotfiles` directory like this:
 
 ```
@@ -14,3 +17,4 @@ Run the install script:
 > cd $HOME
 > .dotfiles/install.sh
 ```
+
