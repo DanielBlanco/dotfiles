@@ -17,4 +17,3 @@ Run the install script:
 > cd $HOME
 > .dotfiles/install.sh
 ```
-

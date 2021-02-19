@@ -13,7 +13,7 @@ if [[ -z $TMUX ]]; then
 
     # check for custom bin directory and add to path
     if [[ -d ~/bin ]]; then
-        export PATH=~/bin:$PATH
+        export PATH=$PATH:~/bin:
     fi
 
     # --- npm
