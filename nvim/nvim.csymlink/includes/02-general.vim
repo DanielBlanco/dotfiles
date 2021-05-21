@@ -81,6 +81,7 @@ if has('autocmd') && !exists('autocommands_loaded')
 
     " autocmd! BufEnter * call ApplyLocalSettings(expand('<afile>:p:h'))
 
+
     autocmd! BufWritePost * Neomake
 endif
 

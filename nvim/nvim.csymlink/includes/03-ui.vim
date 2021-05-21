@@ -36,20 +36,17 @@ set visualbell
 set t_vb=
 set tm=500
 
-" switch syntax highlighting on
-syntax on
-
+syntax on                     " switch syntax highlighting on
 set encoding=utf8
-let base16colorspace=256  " Access colors present in 256 colorspace"
-" Explicitly tell vim that the terminal supports 256 colors"
-set t_Co=256
+let base16colorspace=256      " Access colors present in 256 colorspace"
+set termguicolors             " enable 24bit true colors
+set t_Co=256                  " Explicitly tell vim that the terminal supports 256 colors"
 
 " Background and theme colors
-execute "set background=dark"
+execute "set background=dark" 
 
 " Theme:
-" let g:seoul256_background=235
-execute "colorscheme nova"
+execute "colorscheme onedark"
 
 " set number " show line numbers
 set relativenumber " show relative line numbers

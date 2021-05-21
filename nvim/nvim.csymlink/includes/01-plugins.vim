@@ -3,18 +3,33 @@ call plug#begin('~/.nvim/plugged')
 "------------------------------------------------------------------------------
 " Color Schemes:
 " -----------------------------------------------------------------------------
-"Plug 'chriskempson/base16-vim'
-"Plug 'nanotech/jellybeans.vim'
-"Plug 'junegunn/seoul256.vim'
-Plug 'trevordmiller/nova-vim'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'chmllr/nova-vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'hzchirs/vim-material'
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'joshdick/onedark.vim'
 
 "------------------------------------------------------------------------------
 " Utilities:
 "------------------------------------------------------------------------------
-
+" To asynchronously run programs.
+Plug 'neomake/neomake'
+" Comment stuff out
+Plug 'tpope/vim-commentary'
 " Fuzzy file, buffer, mru, tag, etc finder.
 Plug 'kien/ctrlp.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Directory viewer
+Plug 'justinmk/vim-dirvish'
+" lean & mean status/tabline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" context-aware pasting
+Plug 'sickill/vim-pasta'
+" A (Neo)vim plugin for formatting code.
+Plug 'sbdchd/neoformat'
+Plug 'w0rp/ale'
 
 "------------------------------------------------------------------------------
 " Language Specific Plugins:
@@ -42,5 +57,6 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'timcharper/textile.vim', { 'for': 'textile' }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'elmcast/elm-vim'
 
 call plug#end()

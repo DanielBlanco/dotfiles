@@ -1,14 +1,24 @@
+# -- Plugins -------------------------------------------------------------------
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin "arcticicestudio/nord-tmux"
+#
 # -- Other setup ---------------------------------------------------------------
 
 # set -g default-command "reatach-to-user-namespace -l fish"
 
-set -g default-terminal "screen-256color"
-#set -g terminal-overrides "screen-256color"
-#set -ga terminal-overrides ",alacritty:RGB"
-#set -ga terminal-overrides ",xterm-256color:RGB"
+# set -g terminal-overrides "alacritty"
+# set -ga terminal-overrides ",alacritty:RGB"
+# set -sa terminal-overrides ",xterm-256color:RGB"
+# set -ga terminal-overrides ",xterm-256color:Tc"
+set -sa terminal-overrides ",xterm-kitty:RGB"
 
 # automatically renumber tmux windows
 set -g renumber-windows on
+
+# -- Color & Style Settings ----------------------------------------------------
+
+#source ~/.dotfiles/tmux/nova.sh
 
 # -- Key Bindings --------------------------------------------------------------
 
@@ -51,14 +61,6 @@ bind -r H resize-pane -L 10
 bind -r J resize-pane -D 10
 bind -r K resize-pane -U 10
 bind -r L resize-pane -R 10
-
-# -- Color & Style Settings ----------------------------------------------------
-
-# source ~/.dotfiles/tmux/nova.sh
-
-# List of plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
