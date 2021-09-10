@@ -29,6 +29,9 @@ set pastetoggle=<F6>
 " toggle paste mode
 map <leader>v :set paste!<cr>
 
+" toggle coc-explorer
+nnoremap <space>e :CocCommand explorer<CR>
+
 " edit ~/.vimrc
 "map <leader>ev :e! ~/.vimrc<cr>
 " edit vim plugins

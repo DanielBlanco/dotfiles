@@ -31,3 +31,8 @@ if [[ -z $TMUX ]]; then
     # ---- Other
     export EDITOR="nvim"
 fi
+
+# check for custom bin directory and add to path
+if [[ -d ~/.local/bin ]]; then
+    export PATH=$PATH:~/.local/bin
+fi

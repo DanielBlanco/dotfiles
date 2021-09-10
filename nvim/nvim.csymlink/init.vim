@@ -9,3 +9,4 @@ source ~/.config/nvim/includes/05-languages.vim
 source ~/.config/nvim/includes/06-airline.vim
 source ~/.config/nvim/includes/07-mappings.vim
 source ~/.config/nvim/includes/08-dirvish.vim
+source ~/.config/nvim/includes/09-configure.vim

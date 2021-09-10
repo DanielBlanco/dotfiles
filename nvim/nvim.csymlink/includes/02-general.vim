@@ -38,6 +38,9 @@ endif
 
 set clipboard=unnamed
 
+" " Copy to clipboard
+vnoremap  <leader>y "+y
+
 " faster redrawing
 set ttyfast
 

@@ -1,4 +1,4 @@
 {
-  "metals.serverVersion": "0.10.2",
+  "metals.serverVersion": "0.10.3",
   "coc.preferences.formatOnSaveFiletypes": ["scala"]
 }

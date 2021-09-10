@@ -26,8 +26,11 @@ alias du='du -h -c' # calculate disk usage for a folder
 alias cddi="cd ~/Development/enverus/"
 
 # SDK
-alias java8="sdk use java 8.0.282-open"
-alias java11="sdk use java 11.0.10-open"
+alias java8="sdk use java 8.0.292-open"
+alias java11="sdk use java 11.0.11-open"
 
 # Mongo
 alias start-mongo="~/System/mongo/start.sh"
+
+# zio-app
+alias zio="~/Code/zio-app/cli/target/native-image/zio-app-cli"

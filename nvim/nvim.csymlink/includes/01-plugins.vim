@@ -18,15 +18,22 @@ Plug 'neomake/neomake'
 " Comment stuff out
 Plug 'tpope/vim-commentary'
 " Fuzzy file, buffer, mru, tag, etc finder.
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Directory viewer
 Plug 'justinmk/vim-dirvish'
+Plug 'kristijanhusak/vim-dirvish-git'
 " lean & mean status/tabline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " context-aware pasting
 Plug 'sickill/vim-pasta'
+" Distraction-free writing in Vim.
+Plug 'junegunn/goyo.vim'
+" A Git wrapper
+Plug 'tpope/vim-fugitive'
+" shows git markers in the sign column.
+Plug 'airblade/vim-gitgutter'
 " A (Neo)vim plugin for formatting code.
 Plug 'sbdchd/neoformat'
 Plug 'w0rp/ale'
