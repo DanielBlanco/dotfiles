@@ -3,7 +3,10 @@ alias reload!='source ~/.zshrc'
 
 colorflag="--color"
 
-alias vim="nvim"
+alias v="~/System/nvim.appimage"
+alias vi="~/System/nvim.appimage"
+alias vim="~/System/nvim.appimage"
+alias nvim="~/System/nvim.appimage"
 
 # Filesystem aliases
 alias ..='cd ..'

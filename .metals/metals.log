@@ -28269,3 +28269,108 @@ Caused by: coursierapi.error.SimpleResolutionError$1: Error downloading com.liha
 [0m2021.02.18 10:56:00 WARN  Build server is not auto-connectable.[0m
 [0m2021.02.18 10:56:00 WARN  no build tool detected in workspace '/home/dblanco/.dotfiles'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
 [0m2021.02.18 12:31:43 INFO  shutting down Metals[0m
+[0m2021.09.10 12:11:58 INFO  Started: Metals version 0.10.3 in workspace '/home/dblanco/.dotfiles' for client coc.nvim 0.0.80.[0m
+[0m2021.09.10 12:11:59 INFO  time: initialize in 1.67s[0m
+[0m2021.09.10 12:11:59 WARN  Build server is not auto-connectable.[0m
+[0m2021.09.10 12:11:59 WARN  no build tool detected in workspace '/home/dblanco/.dotfiles'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.09.10 12:11:59 WARN  no build target for: /home/dblanco/.dotfiles/nvim/nvim.csymlink/lua/plugins.scala[0m
+[0m2021.09.10 12:12:02 INFO  no build target: using presentation compiler with only scala-library: 2.12.13[0m
+Sep 10, 2021 12:12:03 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2Fhome%2Fdblanco%2F.dotfiles%2Fnvim%2Fnvim.csymlink%2Flua%2Fplugins.scala:1: error: unclosed character literal
+vim.cmd('packadd packer.nvim')
+                            ^
+file%3A%2F%2F%2Fhome%2Fdblanco%2F.dotfiles%2Fnvim%2Fnvim.csymlink%2Flua%2Fplugins.scala:1: error: unclosed character literal
+vim.cmd('packadd packer.nvim')
+                            ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchSingleQuote$1(LegacyScanner.scala:469)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:474)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:251)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1106)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:157)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:895)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:336)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.parsers.ScalametaParser.scannerTokens$lzycompute(ScalametaParser.scala:241)
+	at scala.meta.internal.parsers.ScalametaParser.scannerTokens(ScalametaParser.scala:241)
+	at scala.meta.internal.parsers.ScalametaParser.<init>(ScalametaParser.scala:155)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$258.apply(ScalametaParser.scala:5105)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Sep 10, 2021 12:12:03 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2Fhome%2Fdblanco%2F.dotfiles%2Fnvim%2Fnvim.csymlink%2Flua%2Fplugins.scala:1: error: unclosed character literal
+vim.cmd('packadd packer.nvim')
+                            ^
+file%3A%2F%2F%2Fhome%2Fdblanco%2F.dotfiles%2Fnvim%2Fnvim.csymlink%2Flua%2Fplugins.scala:1: error: unclosed character literal
+vim.cmd('packadd packer.nvim')
+                            ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchSingleQuote$1(LegacyScanner.scala:469)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:474)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:251)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1106)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:157)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:895)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:336)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.parsers.ScalametaParser.scannerTokens$lzycompute(ScalametaParser.scala:241)
+	at scala.meta.internal.parsers.ScalametaParser.scannerTokens(ScalametaParser.scala:241)
+	at scala.meta.internal.parsers.ScalametaParser.<init>(ScalametaParser.scala:155)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$258.apply(ScalametaParser.scala:5105)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Sep 10, 2021 12:12:21 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2Fhome%2Fdblanco%2F.dotfiles%2Fnvim%2Fnvim.csymlink%2Flua%2Fplugins.scala:1: error: unclosed character literal
+vim.cmd('packadd packer.nvim')
+                            ^
+file%3A%2F%2F%2Fhome%2Fdblanco%2F.dotfiles%2Fnvim%2Fnvim.csymlink%2Flua%2Fplugins.scala:1: error: unclosed character literal
+vim.cmd('packadd packer.nvim')
+                            ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchSingleQuote$1(LegacyScanner.scala:469)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:474)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:251)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1106)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:157)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:895)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:336)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.parsers.ScalametaParser.scannerTokens$lzycompute(ScalametaParser.scala:241)
+	at scala.meta.internal.parsers.ScalametaParser.scannerTokens(ScalametaParser.scala:241)
+	at scala.meta.internal.parsers.ScalametaParser.<init>(ScalametaParser.scala:155)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$258.apply(ScalametaParser.scala:5105)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+

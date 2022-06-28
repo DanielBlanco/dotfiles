@@ -17,7 +17,7 @@ fi
 autoload -U compinit
 compinit
 
-export EDITOR='nvim'
+export EDITOR='/home/dblanco/System/nvim.appimage'
 export DISABLE_AUTO_TITLE='true'
 
 # [ -z "$TMUX" ] && export TERM=xterm #-256color

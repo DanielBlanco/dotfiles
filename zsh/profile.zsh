@@ -29,7 +29,7 @@ if [[ -z $TMUX ]]; then
     export PGPASSWORD="Sorata7!"
 
     # ---- Other
-    export EDITOR="nvim"
+    export EDITOR='/home/dblanco/System/nvim.appimage'
 fi
 
 # check for custom bin directory and add to path
