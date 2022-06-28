@@ -23,9 +23,17 @@ alias git-config-url="git config --get remote.origin.url"
 alias cpbr="git rev-parse --abbrev-ref HEAD | pbcopy"
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+alias gpick='git cherry-pick'
 
 alias sub-pull='git submodule foreach git pull origin master'
-alias gprune='git fetch --all --prune && g branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+# alias gprune='git fetch --all --prune && g branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+
+function gprune() {
+  for branch in $(git for-each-ref --format="%(refname:lstrip=2)" refs/heads/); do
+      git rebase "$1" "$branch" || git rebase --abort
+  done
+  git fetch --all --prune && g branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+}
 
 function give-credit() {
     git commit --amend --author $1 <$2> -C HEAD
