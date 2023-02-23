@@ -101,8 +101,12 @@ nvim_lsp.flow.setup {
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["UltiSnips#Anon"](args.body)
-    end,
+        local ls = prequire("luasnip")
+        if not ls then
+            return
+        end
+        ls.lsp_expand(args.body)
+    end
   },
   mapping = {
     ['<Tab>'] = function(fallback)
@@ -132,7 +136,7 @@ cmp.setup({
   sources = cmp.config.sources(
     {
       { name = 'nvim_lsp' },
-      { name = 'ultisnips' },
+      { name = "luasnip" },
     },
     {
       { name = 'buffer' },

@@ -3,10 +3,11 @@ alias reload!='source ~/.zshrc'
 
 colorflag="--color"
 
-alias v="~/System/nvim.appimage"
-alias vi="~/System/nvim.appimage"
-alias vim="~/System/nvim.appimage"
-alias nvim="~/System/nvim.appimage"
+alias v="lvim ."
+alias vi="lvim"
+alias vim="lvim"
+# alias nvim="~/System/nvim.appimage"
+# alias neovim="~/System/nvim.appimage"
 
 # Filesystem aliases
 alias ..='cd ..'
@@ -30,7 +31,8 @@ alias cddi="cd ~/Development/enverus/"
 
 # SDK
 alias java8="sdk use java 8.0.292-open"
-alias java11="sdk use java 11.0.11-open"
+alias java11="sdk use java 11.0.17-amzn"
+alias java18="sdk use java 18.0.2-amzn"
 
 # Mongo
 alias start-mongo="~/System/mongo/start.sh"
