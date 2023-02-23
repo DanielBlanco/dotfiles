@@ -14,17 +14,17 @@ if [ "$(uname)" == "Darwin" ]; then
     source install/brew.sh
 
     echo "Updating OSX settings"
-    source installosx.sh
+    source install/osx.sh
 
     echo "Installing node (from nvm)"
     source install/nvm.sh
 
-    echo "Configuring nginx"
     # create a backup of the original nginx.conf
-    mv /usr/local/etc/nginx/nginx.conf /usr/local/etc/nginx/nginx.original
-    ln -s ~/.dotfiles/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf
+    # mv /usr/local/etc/nginx/nginx.conf /usr/local/etc/nginx/nginx.original
+    # echo "Configuring nginx"
+    # ln -s ~/.dotfiles/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf
     # symlink the code.dev from dotfiles
-    ln -s ~/.dotfiles/nginx/code.dev /usr/local/etc/nginx/sites-enabled/code.dev
+    # ln -s ~/.dotfiles/nginx/code.dev /usr/local/etc/nginx/sites-enabled/code.dev
 fi
 
 echo "creating vim directories"
